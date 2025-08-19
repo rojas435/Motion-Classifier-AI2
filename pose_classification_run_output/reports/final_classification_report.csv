@@ -1,0 +1,9 @@
+,precision,recall,f1-score,support
+approaching,1.0,1.0,1.0,94.0
+departing,1.0,1.0,1.0,93.0
+rotating,1.0,1.0,1.0,94.0
+seated,1.0,1.0,1.0,93.0
+upright,1.0,1.0,1.0,93.0
+accuracy,1.0,1.0,1.0,1.0
+macro avg,1.0,1.0,1.0,467.0
+weighted avg,1.0,1.0,1.0,467.0

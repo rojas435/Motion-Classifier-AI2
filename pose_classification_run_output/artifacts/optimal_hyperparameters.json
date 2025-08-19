@@ -1,0 +1,29 @@
+{
+    "random_forest_config": {
+        "params": {
+            "n_estimators": 200,
+            "use_max_depth": true,
+            "max_depth": 29,
+            "min_samples_split": 4,
+            "min_samples_leaf": 1,
+            "max_features": "log2",
+            "class_weight": "balanced"
+        },
+        "score": 0.9992846924177395
+    },
+    "xgboost_config": {
+        "params": {
+            "n_estimators": 200,
+            "learning_rate": 0.01225182858195928,
+            "max_depth": 7,
+            "min_child_weight": 1,
+            "gamma": 0.289823389188453,
+            "subsample": 1.0,
+            "colsample_bytree": 0.5,
+            "reg_alpha": 5.262785327345172e-05,
+            "reg_lambda": 8.648151067964676e-07
+        },
+        "score": 0.9992846924177395
+    },
+    "selected_model_type": "random_forest"
+}

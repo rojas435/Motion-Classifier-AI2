@@ -1,0 +1,39 @@
+2025-06-02 16:28:32,082 [INFO] AutomatedModelPipeline - Automated Model Pipeline Execution Started.
+2025-06-02 16:28:32,083 [INFO] AutomatedModelPipeline - Attempting to load dataset from: outputRecords_balanceado.csv
+2025-06-02 16:28:32,095 [INFO] AutomatedModelPipeline - Dataset loaded. Shape: (1865, 38)
+2025-06-02 16:28:32,100 [INFO] AutomatedModelPipeline - Data prepared. Features shape: (1865, 36), Target shape: (1865,)
+2025-06-02 16:28:32,100 [INFO] AutomatedModelPipeline - Target classes: ['approaching', 'departing', 'rotating', 'seated', 'upright']
+2025-06-02 16:28:32,102 [INFO] AutomatedModelPipeline - Data split: Development set size: 1398, Evaluation set size: 467
+2025-06-02 16:28:32,102 [INFO] AutomatedModelPipeline - Proceeding with hyperparameter tuning.
+2025-06-02 16:28:32,102 [INFO] AutomatedModelPipeline - Starting hyperparameter optimization with Optuna (125 trials per model).
+2025-06-02 16:32:08,016 [INFO] AutomatedModelPipeline - Random Forest - Best CV Score: 0.9993 with params: {'n_estimators': 200, 'use_max_depth': True, 'max_depth': 29, 'min_samples_split': 4, 'min_samples_leaf': 1, 'max_features': 'log2', 'class_weight': 'balanced'}
+2025-06-02 16:32:08,016 [INFO] AutomatedModelPipeline - XGBoost - Best CV Score: 0.9993 with params: {'n_estimators': 200, 'learning_rate': 0.01225182858195928, 'max_depth': 7, 'min_child_weight': 1, 'gamma': 0.289823389188453, 'subsample': 1.0, 'colsample_bytree': 0.5, 'reg_alpha': 5.262785327345172e-05, 'reg_lambda': 8.648151067964676e-07}
+2025-06-02 16:32:08,016 [INFO] AutomatedModelPipeline - Recommended model type based on CV score: RANDOM_FOREST
+2025-06-02 16:32:08,017 [INFO] AutomatedModelPipeline - Optimal configurations saved to pose_classification_run_output\artifacts\optimal_hyperparameters.json
+2025-06-02 16:32:08,017 [WARNING] AutomatedModelPipeline - Could not generate/save all Optuna visualizations for RandomForest: Tried to import 'plotly' but failed. Please make sure that the package is installed correctly to use this feature. Actual error: No module named 'plotly'.
+2025-06-02 16:32:08,018 [WARNING] AutomatedModelPipeline - Could not generate/save all Optuna visualizations for XGBoost: Tried to import 'plotly' but failed. Please make sure that the package is installed correctly to use this feature. Actual error: No module named 'plotly'.
+2025-06-02 16:32:08,019 [INFO] AutomatedModelPipeline - Training final RANDOM_FOREST model with optimal hyperparameters...
+2025-06-02 16:32:08,019 [INFO] AutomatedModelPipeline - Entrenando modelo final...
+2025-06-02 16:32:08,251 [INFO] AutomatedModelPipeline - Entrenamiento finalizado.
+2025-06-02 16:32:08,282 [INFO] AutomatedModelPipeline - Predicción sobre el set de evaluación completada.
+2025-06-02 16:32:08,283 [INFO] AutomatedModelPipeline - Evaluating trained classifier performance...
+2025-06-02 16:32:08,283 [INFO] AutomatedModelPipeline - Final Model Accuracy on Test Set: 1.0000
+2025-06-02 16:32:08,287 [INFO] AutomatedModelPipeline - Classification Report:
+              precision    recall  f1-score   support
+
+ approaching       1.00      1.00      1.00        94
+   departing       1.00      1.00      1.00        93
+    rotating       1.00      1.00      1.00        94
+      seated       1.00      1.00      1.00        93
+     upright       1.00      1.00      1.00        93
+
+    accuracy                           1.00       467
+   macro avg       1.00      1.00      1.00       467
+weighted avg       1.00      1.00      1.00       467
+
+2025-06-02 16:32:08,294 [INFO] AutomatedModelPipeline - Classification report saved to pose_classification_run_output\reports\final_classification_report.csv
+2025-06-02 16:32:08,705 [INFO] AutomatedModelPipeline - Confusion matrices saved to pose_classification_run_output\visualizations\confusion_matrices_summary.png
+2025-06-02 16:32:08,892 [INFO] AutomatedModelPipeline - Per-class metrics bar chart saved to pose_classification_run_output\visualizations\per_class_metrics_barchart.png
+2025-06-02 16:32:09,152 [INFO] AutomatedModelPipeline - Feature importances plot saved to pose_classification_run_output\visualizations\top_feature_importances.png
+2025-06-02 16:32:09,157 [INFO] AutomatedModelPipeline - Trained artifact package saved to pose_classification_run_output\artifacts\best_pose_classifier.pkl
+2025-06-02 16:32:09,157 [INFO] AutomatedModelPipeline - Automated Model Pipeline Execution Finished.
